@@ -35,7 +35,8 @@ def converter_moeda():
     valor_conversao = valor_conversao.replace(",", ".")
     bid = cotacoes_dic[moeda_alt]['bid']
     valor_convertido = float(valor_conversao) / float(bid)
-    texto_final = ("Valor a converter: R${:.2f}\nMoeda Selecionada: {}\nValor da Moeda: {:.2f}\n\nValor Convertido: {:.2f}".format(float(valor_conversao), moeda_conversao, float(bid), float(valor_convertido)))
+    texto_final = ("Valor a converter: R${:.2f}\nMoeda Selecionada: {}\nValor da Moeda: {:.4f}\n\nValor Convertido: {:.4f}".format(float(valor_conversao), moeda_conversao, float(bid), float(valor_convertido)))
+    texto_final = texto_final.replace(".", ",")
     entry_resultado.insert("1.0", texto_final)
     print("Conversor de Moedas")
 
